@@ -1,0 +1,5 @@
+<div (click)="flipCard($event)" [@flipCard]="isRecto ? 'recto' : 'verso'" id="flashcard" class="flashcard no-animation">
+	<div class="question">{{ card[0] }}</div>
+				
+	<div class="answer" style="display: none">{{ card[1] }}</div>
+</div>

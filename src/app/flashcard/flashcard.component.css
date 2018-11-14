@@ -1,0 +1,29 @@
+.flashcard {
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-top: 80px;
+    
+    width: 80vw;
+    height: 80vw;
+    
+    
+    
+    border-radius: 10px;
+    
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    
+    user-select: none;
+}
+
+.question {
+    font-size: 40px;
+    width: 95%;
+}
+
+.answer {
+    font-size: 25px;
+    width: 95%;
+}

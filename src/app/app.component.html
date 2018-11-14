@@ -2,15 +2,31 @@
 	MyFlashcardApp
 </div>
 
-<div id="flashcard" class="no-animation">
-	<div id="question"></div>
-			
-	<div id="answer" style="display: none"></div>
-</div>
+<swiper [config]="config" [(index)]="index">
+	<div *ngFor="let card of cards">
+		<app-flashcard [card]="card"></app-flashcard>
+	</div>
+	
+	<!--
+	<div id="flashcard" class="no-animation">
+		<div i="question"></div>
+				
+		<div id="answer" style="display: none"></div>
+	</div>
 
+	<div id="flashcard" class="no-animation">
+		<div id="question"></div>
+				
+		<div id="answer" style="display: none"></div>
+	</div> 
+	-->
+</swiper>
+
+<!--
 <div id="nav-btn">
 	<button id="left-btn" class="btn"> < </button>
 	<button id="right-btn" class="btn"> > </button>
 </div>
+-->
 
 <router-outlet></router-outlet>

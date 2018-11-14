@@ -28,6 +28,7 @@ export class AppComponent implements OnInit {
 
     	$(document).ready(() => {
 
+			/*
 			$('#question').html(this.cards[0][0])
 			$('#answer').html(this.cards[0][1])
 
@@ -35,6 +36,7 @@ export class AppComponent implements OnInit {
 			  
 			$('#left-btn').on('click', flipLeft.bind(this))
 			$('#right-btn').on('click', flipRight.bind(this))
+			*/
 
 		})
 		
