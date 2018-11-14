@@ -1,0 +1,36 @@
+#color-picker {
+    background-color: #ecf0f1;
+    border: 1px solid #bdc3c7;
+    border-radius: 10px;
+    width: 80vw;
+    height: 50px;
+    margin: auto;
+    margin-top: 20px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.color-box {
+    width: 8vw;
+    height: 8vw;
+    border: 1px solid #bdc3c7;
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#card-inputs {
+    width: 80vw;
+    height: 10vh;
+    margin: auto;
+    margin-top: 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}

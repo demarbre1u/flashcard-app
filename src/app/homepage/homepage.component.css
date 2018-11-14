@@ -1,0 +1,19 @@
+#wrapper {
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#wrapper button {
+    outline: none;
+    color: #2c3e50;
+    border: 2px solid #2c3e50;
+    border-radius: 15px;
+    background-color: white;
+    padding: 10px;
+    width: 65vw;
+    margin: auto;
+    font-size: 18px;
+    font-weight: bolder;
+}

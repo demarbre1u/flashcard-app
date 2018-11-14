@@ -1,5 +1,5 @@
 <div (click)="flipCard($event)" [@flipCard]="isRecto ? 'recto' : 'verso'"  class="flashcard">
-	<div class="question">{{ card[0] }}</div>
+	<div class="question">{{ card ? card[0] : '' }}</div>
 				
-	<div class="answer" style="display: none">{{ card[1] }}</div>
+	<div class="answer" style="display: none">{{ card ? card[1] : '' }}</div>
 </div>

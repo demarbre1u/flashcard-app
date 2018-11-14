@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {trigger, state, style, animate, transition, keyframes} from '@angular/animations';
+import $ from "../../../node_modules/jquery";
 
 @Component({
 	selector: 'app-flashcard',
@@ -88,9 +89,6 @@ export class FlashcardComponent implements OnInit {
 		let target = $(event.target || event.srcElement || event.currentTarget)
 		let question = $(target).find('.question')
 		let answer = $(target).find('.answer')
-		
-		console.log(question)
-		console.log(answer)
 		
 		if(!this.isRecto) {
 			question.fadeToggle(500, () => {

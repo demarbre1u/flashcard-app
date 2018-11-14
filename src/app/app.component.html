@@ -2,10 +2,4 @@
 	MyFlashcardApp
 </div>
 
-<swiper [config]="config" [(index)]="index">
-	<div *ngFor="let card of cards">
-		<app-flashcard [card]="card"></app-flashcard>
-	</div>
-</swiper>
-
 <router-outlet></router-outlet>

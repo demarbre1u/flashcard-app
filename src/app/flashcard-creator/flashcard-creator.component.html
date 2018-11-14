@@ -1,0 +1,10 @@
+<div id="card-inputs">
+    <input placeholder="Question" type="text">
+    <input placeholder="Your answer" type="text">
+</div>
+
+<app-flashcard></app-flashcard>
+
+<div id="color-picker">
+  <div *ngFor="let color of colors" class="color-box" [style.background-color]="color"></div>
+</div>
