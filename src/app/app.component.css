@@ -1,0 +1,122 @@
+@keyframes flipCard1 {
+    0% {
+        background-color: #2c3e50;
+        color: #ecf0f1; 
+        transform: 0;
+    }
+    
+    50% {
+        background-color: #2c3e50;
+        color: #ecf0f1; 
+        transform: rotate3d(0,1,0,90deg);
+    }
+    
+    51% {
+        background-color: #ecf0f1;
+        color: #2c3e50;
+    }
+    
+    100% {
+        background-color: #ecf0f1;
+        color: #2c3e50;
+        transform: rotate3d(0,1,0,0deg);
+    }
+}
+
+.flip-card-1 {
+    animation-name: flipCard1;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes flipCard2 {
+    0% {
+        background-color: #ecf0f1; 
+        color: #2c3e50;
+        transform: 0;
+    }
+    
+    50% {
+        background-color: #ecf0f1; 
+        color: #2c3e50;
+        transform: rotate3d(0,1,0,90deg);
+    }
+    
+    51% {
+        background-color: #2c3e50;
+        color: #ecf0f1; 
+    }
+    
+    100% {
+        background-color: #2c3e50;
+        color: #ecf0f1; 
+        transform: rotate3d(0,1,0,0deg);
+    }
+}
+
+.flip-card-2 {
+    animation-name: flipCard2;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+#flashcard {
+    margin: auto;
+    margin-top: 80px;
+    
+    width: 80vw;
+    height: 80vw;
+    
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    
+    border-radius: 10px;
+    
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    
+    user-select: none;
+    cursor: pointer;
+}
+
+#question {
+    font-size: 40px;
+    width: 95%
+}
+
+#answer {
+    font-size: 25px;
+    width: 95%
+}
+
+#header {
+    margin: 0;
+    padding: 15px;
+
+
+    font-size: 25px;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    box-shadow: grey 1px 1px 1px;
+}
+
+#nav-btn {
+    width: 80vw;
+    padding-top: 50px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    border: 2px solid  #2c3e50;
+    color:  #2c3e50;
+    background-color: white;
+    border-radius: 5px;
+
+    font-size: 40px;
+    width: 100px;
+    text-align: center;
+}
