@@ -51,10 +51,12 @@ const appRoutes: Routes = [
       appRoutes
     )
   ],
-  providers: [{
-	  provide: SWIPER_CONFIG,
+  providers: [
+    {
+	    provide: SWIPER_CONFIG,
       useValue: DEFAULT_SWIPER_CONFIG
-  }],
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

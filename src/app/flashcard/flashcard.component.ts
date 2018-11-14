@@ -78,7 +78,7 @@ export class FlashcardComponent implements OnInit {
 	
 	flipCard(event) {
 		if(this.isFlipping)
-			return 
+			return
 		
 		this.isRecto = !this.isRecto	
 		this.isFlipping = true
