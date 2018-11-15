@@ -1,6 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef, Renderer2 } from '@angular/core';
 import {trigger, state, style, animate, transition, keyframes} from '@angular/animations';
-import $ from "../../../node_modules/jquery";
 
 @Component({
 	selector: 'app-flashcard',
@@ -69,12 +68,17 @@ import $ from "../../../node_modules/jquery";
 
 export class FlashcardComponent implements OnInit {
 	@Input() card: string;
+	@ViewChild('question') question:ElementRef;
+	@ViewChild('answer') answer:ElementRef;
 	isRecto = true
 	isFlipping = false
+	@Input() isQuestionShowing: boolean
 
 	constructor() { }
 	
-	ngOnInit() { }
+	ngOnInit() { 		
+		this.isQuestionShowing = true
+	}
 	
 	flipCard(event) {
 		if(this.isFlipping)
@@ -82,22 +86,17 @@ export class FlashcardComponent implements OnInit {
 		
 		this.isRecto = !this.isRecto	
 		this.isFlipping = true
+		
+		setTimeout(() => {
+			this.isQuestionShowing = !this.isQuestionShowing
+			
+			this.question.nativeElement.classList.toggle('hidden')
+			this.answer.nativeElement.classList.toggle('hidden')
+		}, 500)
+		
 	    setTimeout(() => {
 	    	this.isFlipping = false
 	    }, 1000);
 		
-		let target = $(event.target || event.srcElement || event.currentTarget)
-		let question = $(target).find('.question')
-		let answer = $(target).find('.answer')
-		
-		if(!this.isRecto) {
-			question.fadeOut(450, () => {
-				answer.fadeIn(450)
-			})	
-		} else {
-		    answer.fadeOut(450, () => {
-		    	question.fadeIn(450)
-			})	
-	    }
 	}
 }
