@@ -8,5 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
 	title = 'MyFlashcardApp'
 	
-  	public ngOnInit() { }
+  	public ngOnInit() { 
+		
+	}
 }

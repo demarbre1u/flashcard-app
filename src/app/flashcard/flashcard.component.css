@@ -17,11 +17,13 @@
 }
 
 .question {
+    overflow: hidden;
     font-size: 40px;
     width: 95%;
 }
 
 .answer {
+    overflow: hidden;
     font-size: 25px;
     width: 95%;
 }

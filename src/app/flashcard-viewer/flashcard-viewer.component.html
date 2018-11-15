@@ -1,5 +1,7 @@
-<swiper>
+<swiper *ngIf="cards.length > 0">
 	<div *ngFor="let card of cards">
 		<app-flashcard [card]="card"></app-flashcard>
 	</div>
 </swiper>
+
+<h3 *ngIf="cards.length == 0">There's no card yet :/</h3>

@@ -6,9 +6,9 @@ import {trigger, state, style, animate, transition, keyframes} from '@angular/an
 	animations: [
 		trigger('flipCard', [
 			state('recto', style({
-			    background: '#2c3e50',
+			    background: '{{ color }}',
 				color: '#ecf0f1',
-			})),
+			}), {params: {color: 0}}),
 			
 			state('verso', style({
 			    background: '#ecf0f1',
@@ -17,12 +17,12 @@ import {trigger, state, style, animate, transition, keyframes} from '@angular/an
 			
 			transition('recto => verso', animate('1s', keyframes([
 				    style({
-				    	background: '#2c3e50',
-				        color: '#ecf0f1',
+				    	background: '{{ color }}',
+				        color: 'white',
 				    }),
 				    style({
-				    	background: '#2c3e50',
-				        color: '#ecf0f1',
+				    	background: '{{ color }}',
+				        color: 'white',
 				        transform: 'rotate3d(0,1,0,90deg)',
 				    }),
 				    style({
@@ -36,7 +36,7 @@ import {trigger, state, style, animate, transition, keyframes} from '@angular/an
 				    }),
 				    
 			    ])
-			)),
+			), {params: {color: 0}}),
 			
 			transition('verso => recto', animate('1s', keyframes([
 				    style({
@@ -49,17 +49,17 @@ import {trigger, state, style, animate, transition, keyframes} from '@angular/an
 				        transform: 'rotate3d(0,1,0,90deg)',
 				    }),
 				    style({
-				    	background: '#2c3e50',
-				        color: '#ecf0f1',
+				    	background: '{{ color }}',
+				        color: 'white',
 				    }),
 				    style({
-						background: '#2c3e50',
-				        color: '#ecf0f1',
+						background: '{{ color }}',
+				        color: 'white',
 				        transform: 'rotate3d(0,1,0,0deg)'
 				    }),
 				    
 			    ])
-			)),
+			), {params: {color: 0}}),
 		]),
 	],
 	templateUrl: './flashcard.component.html',

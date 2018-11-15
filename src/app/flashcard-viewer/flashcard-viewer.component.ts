@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LocalStorageManager } from '../localstorage.manager';
 
 @Component({
   selector: 'app-flashcard-viewer',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class FlashcardViewerComponent implements OnInit {
   cards = []
 
-  constructor() { }
+  constructor(private storage: LocalStorageManager) { }
 
   public ngOnInit()
   {
@@ -16,18 +17,10 @@ export class FlashcardViewerComponent implements OnInit {
   }
   
   loadCards() {
-    let cardsString = window.localStorage.getItem('cards')
-		if(cardsString === null)
-		{
-			this.cards.push(['学ぶ', 'to study'])
-			this.cards.push(['悪夢', 'nightmare'])
-
-			window.localStorage.setItem('cards', JSON.stringify(this.cards) )
-		}
-		else
-		{
-			this.cards = JSON.parse(cardsString)
-		}
+		this.cards = this.storage.getCards()
   }
 
+  clearCards() {
+    this.storage.clearCards()
+  }
 }

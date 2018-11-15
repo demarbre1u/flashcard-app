@@ -13,6 +13,7 @@ import { FlashcardViewerComponent } from './flashcard-viewer/flashcard-viewer.co
 import { Routes, RouterModule } from '@angular/router';
 import { HomepageComponent } from './homepage/homepage.component';
 import { FlashcardCreatorComponent } from './flashcard-creator/flashcard-creator.component';
+import { LocalStorageManager } from './localstorage.manager';
  
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -55,7 +56,8 @@ const appRoutes: Routes = [
     {
 	    provide: SWIPER_CONFIG,
       useValue: DEFAULT_SWIPER_CONFIG
-    }
+    }, 
+    LocalStorageManager
   ],
   bootstrap: [AppComponent]
 })

@@ -1,14 +1,20 @@
 <div id="card-inputs">
     <div>
-        <input placeholder="Question" type="text">
+        <input spellcheck="false" class="input-text" placeholder="Question" type="text" (input)="updateQuestion($event)">
     </div>
     <div>
-        <input placeholder="Your answer" type="text">
+        <input spellcheck="false" class="input-text" placeholder="Your answer" type="text" (input)="updateAnswer($event)">
     </div>
 </div>
 
-<app-flashcard></app-flashcard>
+<app-flashcard [card]="card"></app-flashcard>
 
 <div id="color-picker">
-  <div *ngFor="let color of colors" class="color-box" [style.background-color]="color"></div>
+  <div *ngFor="let color of colors" class="color-box" (click)="updateColor(color.id)" [style.background-color]="color.color"></div>
+</div>
+
+<div id="save-btn">
+    <button (click)="saveCard()">
+        Add card
+    </button>    
 </div>
