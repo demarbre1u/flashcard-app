@@ -67,7 +67,7 @@ import {trigger, state, style, animate, transition, keyframes} from '@angular/an
 })
 
 export class FlashcardComponent implements OnInit {
-	@Input() card: string;
+	@Input() card;
 	@ViewChild('question') question:ElementRef;
 	@ViewChild('answer') answer:ElementRef;
 	isRecto = true
