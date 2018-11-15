@@ -91,12 +91,12 @@ export class FlashcardComponent implements OnInit {
 		let answer = $(target).find('.answer')
 		
 		if(!this.isRecto) {
-			question.fadeToggle(500, () => {
-				answer.fadeToggle(500)
+			question.fadeOut(450, () => {
+				answer.fadeIn(450)
 			})	
 		} else {
-		    answer.fadeToggle(500, () => {
-		    	question.fadeToggle(500)
+		    answer.fadeOut(450, () => {
+		    	question.fadeIn(450)
 			})	
 	    }
 	}
