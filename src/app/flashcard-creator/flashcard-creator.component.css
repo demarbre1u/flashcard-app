@@ -26,7 +26,8 @@
 #card-inputs {
     height: 10vh;
     margin: auto;
-    margin-top: 30px;
+    margin-top: 15px;
+    margin-bottom: 5px;
 
     display: flex;
     flex-direction: column;
@@ -40,7 +41,6 @@
     border: none;
 	border-bottom: 2px solid #2c3e50;
 	font-size: 16px;
-	padding: 4px 0px;
 	color: #2c3e50;
 	margin-bottom: 10px;
     margin-top: 10px;
