@@ -2,7 +2,7 @@
     height: 85vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 #wrapper button {

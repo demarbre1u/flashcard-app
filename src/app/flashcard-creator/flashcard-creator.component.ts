@@ -2,10 +2,15 @@ import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { LocalStorageManager } from '../localstorage.manager';
 
+import { routerTransition } from '../router.animations';
+
 @Component({
   selector: 'app-flashcard-creator',
   templateUrl: './flashcard-creator.component.html',
-  styleUrls: ['./flashcard-creator.component.css']
+  styleUrls: ['./flashcard-creator.component.css'],
+  
+  animations: [routerTransition()],
+  host: {'[@routerTransition]': ''}
 })
 export class FlashcardCreatorComponent implements OnInit {
   colors = [
@@ -44,24 +49,20 @@ export class FlashcardCreatorComponent implements OnInit {
 
   updateQuestion(event) {
     this.card.question = event.srcElement.value
-    console.log(event.srcElement.value)
-    console.log(this.card)
   }
 
   updateAnswer(event) {
     this.card.answer = event.srcElement.value
-    console.log(event.srcElement.value)
   }
 
   updateColor(colorId) {
     this.card.color = (this.colors.filter( (elem) => elem.id === colorId))[0].color
-
-    console.log(colorId)
   }
 
   saveCard() {
     if(this.card.question === '' || this.card.answer === '') {
       console.log("La carte n'est pas complète")
+      
       return
     }
 
