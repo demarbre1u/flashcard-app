@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { LocalStorageManager } from '../localstorage.manager';
+import { SwiperComponent } from 'ngx-swiper-wrapper';
+import { Router } from '@angular/router';
 
 import { routerTransition } from '../router.animations';
 
@@ -13,8 +15,10 @@ import { routerTransition } from '../router.animations';
 })
 export class FlashcardViewerComponent implements OnInit {
   cards = []
+  
+  @ViewChild(SwiperComponent) componentRef?: SwiperComponent;
 
-  constructor(private storage: LocalStorageManager) { }
+  constructor(private storage: LocalStorageManager, private router: Router) { }
 
   public ngOnInit()
   {
@@ -27,5 +31,20 @@ export class FlashcardViewerComponent implements OnInit {
 
   clearCards() {
     this.storage.clearCards()
+  }
+  
+  deleteCurrentCard() {
+	  let currentIndex = this.componentRef.directiveRef.getIndex()
+	  
+	  this.storage.deleteCard(currentIndex)
+	  
+	  this.router.routeReuseStrategy.shouldReuseRoute = function(){return false;};
+
+	  let currentUrl = this.router.url + '?';
+
+	  this.router.navigateByUrl(currentUrl).then(() => {
+	      this.router.navigated = false;
+	      this.router.navigate([this.router.url]);
+	  });
   }
 }

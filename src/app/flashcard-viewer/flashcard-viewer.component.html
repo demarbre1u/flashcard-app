@@ -5,3 +5,5 @@
 </swiper>
 
 <h3 *ngIf="cards.length == 0">There's no card yet :/</h3>
+
+<input *ngIf="cards.length > 0" type="button" value="Delete card" (click)="deleteCurrentCard()" />
