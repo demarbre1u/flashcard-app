@@ -24,7 +24,7 @@
 }
 
 #card-inputs {
-    height: 10vh;
+    height: 65px;
     margin: auto;
     margin-top: 15px;
     margin-bottom: 5px;
@@ -36,7 +36,7 @@
 }
 
 .input-text {
-    height: 4vh;
+    height: 20px;
     width: 60vw;
     outline: none;
     border: none;
@@ -59,7 +59,6 @@
 .input-text::placeholder {
 	color: #95a5a6; 
 }
-
 
 #save-btn {
     padding: 20px;
