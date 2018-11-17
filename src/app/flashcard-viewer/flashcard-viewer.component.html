@@ -1,4 +1,6 @@
-<swiper *ngIf="cards.length > 0">
+<h2 *ngIf="cards.length > 0">{{ index ? index+1 : 1 }} / {{ cards.length }}</h2>
+
+<swiper [(index)]="index" *ngIf="cards.length > 0">
 	<div *ngFor="let card of cards">
 		<app-flashcard [card]="card"></app-flashcard>
 	</div>
@@ -6,4 +8,6 @@
 
 <h3 *ngIf="cards.length == 0">There's no card yet :/</h3>
 
-<input *ngIf="cards.length > 0" type="button" value="Delete card" (click)="deleteCurrentCard()" />
+<div id="btn-wrapper">
+	<button *ngIf="cards.length > 0" type="button" (click)="deleteCurrentCard()">Delete card</button>
+</div>
