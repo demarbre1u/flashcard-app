@@ -1,4 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* CSS for Angular Notifier */
+@import "~angular-notifier/styles";
+
+
 body {
     font-family: Verdana, Arial;
     padding: 0;

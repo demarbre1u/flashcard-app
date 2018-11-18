@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { LocalStorageManager } from '../localstorage.manager';
 
 import { routerTransition } from '../router.animations';
+import { NotifierService } from 'angular-notifier';
 
 @Component({
   selector: 'app-flashcard-creator',
@@ -42,7 +43,7 @@ export class FlashcardCreatorComponent implements OnInit {
 
   @Input() card = {question:'', answer: '', color: '#2c3e50'}
   
-  constructor(private router: Router, private storage: LocalStorageManager) { }
+  constructor(private router: Router, private storage: LocalStorageManager, private notifierService: NotifierService) { }
 
   ngOnInit() { 
   }
@@ -61,7 +62,7 @@ export class FlashcardCreatorComponent implements OnInit {
 
   saveCard() {
     if(this.card.question === '' || this.card.answer === '') {
-      console.log("La carte n'est pas complète")
+      this.notifierService.notify('error', "You can't save an incomplete card!")
       
       return
     }

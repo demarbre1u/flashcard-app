@@ -20,6 +20,7 @@
     "@angular/platform-browser": "~7.0.0",
     "@angular/platform-browser-dynamic": "~7.0.0",
     "@angular/router": "~7.0.0",
+    "angular-notifier": "^4.1.1",
     "angular-ui-swiper": "^2.3.8",
     "core-js": "^2.5.4",
     "ngx-swiper-wrapper": "^7.0.0",
