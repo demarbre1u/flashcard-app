@@ -33,7 +33,7 @@ const appRoutes: Routes = [
     component: CollectionListComponent 
   },
   { 
-    path: 'flashcard', 
+    path: 'cards/:id', 
     component: FlashcardViewerComponent 
   },
   { 

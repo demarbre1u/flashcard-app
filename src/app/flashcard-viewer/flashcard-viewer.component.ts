@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { LocalStorageManager } from '../localstorage.manager';
 import { SwiperComponent } from 'ngx-swiper-wrapper';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import { routerTransition } from '../router.animations';
 
@@ -15,24 +15,27 @@ import { routerTransition } from '../router.animations';
 })
 export class FlashcardViewerComponent implements OnInit {
   cards = []
+  currentId: string
   
   @ViewChild(SwiperComponent) componentRef?: SwiperComponent;
 
-  constructor(private storage: LocalStorageManager, private router: Router) { }
+  constructor(private route: ActivatedRoute, private storage: LocalStorageManager, private router: Router) { }
 
   public ngOnInit()
   {
-		this.loadCards()
+    this.route.params.subscribe((params) => {this.currentId = params['id']});
+
+    this.loadCards()
   }
   
   loadCards() {
-		this.cards = this.storage.getCards()
+		this.cards = this.storage.getCardsFromCollection(this.currentId)
   }
   
   deleteCurrentCard() {
 	  let currentIndex = this.componentRef.directiveRef.getIndex()
 	  
-	  this.storage.deleteCard(currentIndex)
+	  this.storage.deleteCardFromCollection(currentIndex, currentIndex)
 	  
 	  this.router.routeReuseStrategy.shouldReuseRoute = function(){return false;};
 

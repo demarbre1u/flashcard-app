@@ -29,7 +29,7 @@ export class CollectionListComponent implements OnInit {
   }
 
   seeCards(id: number) {
-
+    this.router.navigate(['cards', id])
   }
 
   deleteCollection(id: number) {

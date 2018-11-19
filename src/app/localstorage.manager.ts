@@ -9,6 +9,22 @@ export class LocalStorageManager {
 
         window.localStorage.setItem('collections', JSON.stringify(collections))
     }
+
+    getCardsFromCollection(id) {
+        let collections = this.getCollections()
+
+        let cards = collections[id].cards;
+
+        return cards;
+    }
+
+    deleteCardFromCollection(idCol, idCard) {
+        let collections = this.getCollections()
+
+        collections[idCol].cards.splice(idCard, 1)
+
+        window.localStorage.setItem('collections', JSON.stringify(collections))
+    }
     
     getCard(index) {
 	    return this.getCards()[index]
