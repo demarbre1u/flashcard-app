@@ -33,4 +33,44 @@ export class LocalStorageManager {
     clearCards() {
         window.localStorage.removeItem('cards')
     }
+
+    resetStorage() {
+        let collections =  [
+            {
+                name: 'Basic', 
+                cards: [
+                    {question: 'Simple', answer: 'Basic', color: 'black'},
+                ]
+            }, 
+            {
+                name: 'English', 
+                cards: [
+                    {question: 'Yes', answer: 'oui', color: 'blue'},
+                    {question: 'No', answer: 'non', color: 'blue'},
+                ]
+            },
+            {
+                name: 'Japanese', 
+                cards: [
+                    {question: 'はい', answer: 'oui', color: 'red'},
+                    {question: 'いいえ', answer: 'non', color: 'red'},
+                ]
+            },
+            {
+                name: 'Emptyccnjsncksdnjkcsnjkcnsdjkcnsjkcnkdsncjksncjkndsjkcnjskdnck', 
+                cards: []
+            }
+        ]
+
+        window.localStorage.setItem('collections', JSON.stringify(collections))
+    }
+
+    getCollections() {
+        let collections = window.localStorage.getItem('collections')
+
+        if(collections === null)
+            return []
+        else
+            return JSON.parse(collections)
+    }
 }

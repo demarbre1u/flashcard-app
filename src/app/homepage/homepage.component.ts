@@ -19,6 +19,7 @@ export class HomepageComponent implements OnInit {
   }
   
   clearStorage() {
-	  this.storage.clearCards()
+	  // this.storage.clearCards()
+    this.storage.resetStorage()
   }
 }

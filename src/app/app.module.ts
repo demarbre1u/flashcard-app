@@ -15,6 +15,8 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { FlashcardCreatorComponent } from './flashcard-creator/flashcard-creator.component';
 import { LocalStorageManager } from './localstorage.manager';
 import { NotifierModule, NotifierOptions } from "angular-notifier";
+import { CollectionListComponent } from './collection-list/collection-list.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
  
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -27,11 +29,15 @@ const appRoutes: Routes = [
     component: HomepageComponent 
   },
   { 
+    path: 'list', 
+    component: CollectionListComponent 
+  },
+  { 
     path: 'flashcard', 
     component: FlashcardViewerComponent 
   },
   { 
-    path: 'create', 
+    path: 'create/:id', 
     component: FlashcardCreatorComponent 
   },
 ];
@@ -82,7 +88,8 @@ const notifierDefaultOptions: NotifierOptions = {
     FlashcardComponent,
     FlashcardViewerComponent,
     HomepageComponent,
-    FlashcardCreatorComponent
+    FlashcardCreatorComponent,
+    CollectionListComponent
   ],
   imports: [
     BrowserModule,
@@ -92,7 +99,8 @@ const notifierDefaultOptions: NotifierOptions = {
     RouterModule.forRoot(
       appRoutes
     ), 
-    NotifierModule.withConfig(notifierDefaultOptions)
+    NotifierModule.withConfig(notifierDefaultOptions), 
+    FontAwesomeModule
   ],
   providers: [
     {

@@ -1,0 +1,59 @@
+#collection-list {
+    height: 88vh;
+    margin-bottom: 20px;
+    overflow-y: scroll;
+}
+
+.collection-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 80vw;
+    margin: auto;
+
+    padding: 8px 15px;
+
+    
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    color: #2c3e50;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    box-shadow: grey 0px 3px 5px;
+
+}
+
+.collection-info {
+    width: 40vw;
+}
+
+.collection-title {
+    font-weight: bolder;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.collection-length {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.collection-btn button {
+    margin: 5px;
+    margin-right: 0;
+    outline: none;
+    border: 1px solid #bdc3c7;
+    box-shadow: grey 0px 3px 5px;
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    color: #2c3e50;
+    background-color: white;
+}
