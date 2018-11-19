@@ -28,10 +28,6 @@ export class FlashcardViewerComponent implements OnInit {
   loadCards() {
 		this.cards = this.storage.getCards()
   }
-
-  clearCards() {
-    this.storage.clearCards()
-  }
   
   deleteCurrentCard() {
 	  let currentIndex = this.componentRef.directiveRef.getIndex()

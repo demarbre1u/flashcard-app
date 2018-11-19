@@ -7,8 +7,10 @@
 
     <div class="collection-btn">
       <button class="btn-add" (click)="addCard(i)"> <fa-icon [icon]="faPlus" size="lg"></fa-icon> </button>
-      <button class="btn-see"> <fa-icon [icon]="faEye" size="lg"></fa-icon> </button>
-      <button class="btn-delete"> <fa-icon [icon]="faTrash" size="lg"></fa-icon> </button>
+      <button class="btn-see" (click)="seeCards(i)"> <fa-icon [icon]="faEye" size="lg"></fa-icon> </button>
+      <button class="btn-delete" (click)="deleteCollection(i)"> <fa-icon [icon]="faTrash" size="lg"></fa-icon> </button>
     </div>
   </div>
+
+  <button id="btn-add-collection">New collection</button>
 </div>

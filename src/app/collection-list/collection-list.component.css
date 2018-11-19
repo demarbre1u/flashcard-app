@@ -57,3 +57,17 @@
     color: #2c3e50;
     background-color: white;
 }
+
+#btn-add-collection {
+    display: block;
+    width: 60vw;
+    margin: auto;
+    padding: 15px;
+    outline: none;
+    border: none;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    box-shadow: grey 0px 3px 5px;
+
+    font-size: 20px;
+}

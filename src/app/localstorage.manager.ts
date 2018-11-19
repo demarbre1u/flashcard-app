@@ -2,12 +2,12 @@ import { Injectable } from "@angular/core";
 
 @Injectable()
 export class LocalStorageManager {
-    addCard(card) {
-        let cards = this.getCards()
+    addCardToCollection(id, card) {
+        let collections = this.getCollections()
 
-        cards.push(card)
+        collections[id].cards.push(card)
 
-        window.localStorage.setItem('cards', JSON.stringify(cards))
+        window.localStorage.setItem('collections', JSON.stringify(collections))
     }
     
     getCard(index) {
@@ -30,8 +30,13 @@ export class LocalStorageManager {
             return JSON.parse(data)
     }
 
-    clearCards() {
-        window.localStorage.removeItem('cards')
+    getCollections() {
+        let collections = window.localStorage.getItem('collections')
+
+        if(collections === null)
+            return []
+        else
+            return JSON.parse(collections)
     }
 
     resetStorage() {
@@ -63,14 +68,5 @@ export class LocalStorageManager {
         ]
 
         window.localStorage.setItem('collections', JSON.stringify(collections))
-    }
-
-    getCollections() {
-        let collections = window.localStorage.getItem('collections')
-
-        if(collections === null)
-            return []
-        else
-            return JSON.parse(collections)
     }
 }

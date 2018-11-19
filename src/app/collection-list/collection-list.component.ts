@@ -25,8 +25,14 @@ export class CollectionListComponent implements OnInit {
   ngOnInit() { }
 
   addCard(id: number) {
-    console.log(id)
-
     this.router.navigate(['create', id])
+  }
+
+  seeCards(id: number) {
+
+  }
+
+  deleteCollection(id: number) {
+    
   }
 }

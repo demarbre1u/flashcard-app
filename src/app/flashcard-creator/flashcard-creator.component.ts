@@ -1,9 +1,11 @@
 import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { switchMap } from 'rxjs/operators';
 import { LocalStorageManager } from '../localstorage.manager';
 
 import { routerTransition } from '../router.animations';
 import { NotifierService } from 'angular-notifier';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-flashcard-creator',
@@ -41,11 +43,14 @@ export class FlashcardCreatorComponent implements OnInit {
       },
   ]
 
+  currentId: string
+
   @Input() card = {question:'', answer: '', color: '#2c3e50'}
   
-  constructor(private router: Router, private storage: LocalStorageManager, private notifierService: NotifierService) { }
+  constructor(private router: Router, private route: ActivatedRoute, private storage: LocalStorageManager, private notifierService: NotifierService) { }
 
   ngOnInit() { 
+    this.route.params.subscribe((params) => {this.currentId = params['id']});
   }
 
   updateQuestion(event) {
@@ -67,8 +72,8 @@ export class FlashcardCreatorComponent implements OnInit {
       return
     }
 
-    this.storage.addCard(this.card)
+    this.storage.addCardToCollection(this.currentId, this.card)
 
-    this.router.navigateByUrl('');
+    this.router.navigateByUrl('list');
   }
 }
