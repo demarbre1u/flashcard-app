@@ -15,6 +15,7 @@ import { routerTransition } from '../router.animations';
 })
 export class FlashcardViewerComponent implements OnInit {
   cards = []
+  name: string
   currentId: string
   
   @ViewChild(SwiperComponent) componentRef?: SwiperComponent;
@@ -26,16 +27,21 @@ export class FlashcardViewerComponent implements OnInit {
     this.route.params.subscribe((params) => {this.currentId = params['id']});
 
     this.loadCards()
+    this.getName()
   }
   
   loadCards() {
 		this.cards = this.storage.getCardsFromCollection(this.currentId)
   }
+
+  getName() {
+    this.name = this.storage.getCollectionName(this.currentId)
+  }
   
   deleteCurrentCard() {
 	  let currentIndex = this.componentRef.directiveRef.getIndex()
 	  
-	  this.storage.deleteCardFromCollection(currentIndex, currentIndex)
+	  this.storage.deleteCardFromCollection(this.currentId, currentIndex)
 	  
 	  this.router.routeReuseStrategy.shouldReuseRoute = function(){return false;};
 

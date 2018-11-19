@@ -1,7 +1,19 @@
+h1 {
+    width: 80vw;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+    color: #2c3e50;
+    
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 h3, h2 {
     width: 80vw;
     margin: auto;
-    margin-top: 10vh;
+    margin-top: 10px;
     text-align: center;
     color: #2c3e50;
 }

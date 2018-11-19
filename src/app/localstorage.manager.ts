@@ -18,6 +18,12 @@ export class LocalStorageManager {
         return cards;
     }
 
+    getCollectionName(id) {
+        let collections = this.getCollections()
+
+        return collections[id].name
+    }
+
     deleteCardFromCollection(idCol, idCard) {
         let collections = this.getCollections()
 
@@ -60,27 +66,21 @@ export class LocalStorageManager {
             {
                 name: 'Basic', 
                 cards: [
-                    {question: 'Simple', answer: 'Basic', color: 'black'},
+                    {question: 'Simple', answer: 'Basic', color: '#2c3e50'},
                 ]
             }, 
             {
                 name: 'English', 
                 cards: [
-                    {question: 'Yes', answer: 'oui', color: 'blue'},
-                    {question: 'No', answer: 'non', color: 'blue'},
+                    {question: 'Welcome', answer: 'Bienvenue', color: '#2980b9'},
                 ]
             },
             {
                 name: 'Japanese', 
                 cards: [
-                    {question: 'はい', answer: 'oui', color: 'red'},
-                    {question: 'いいえ', answer: 'non', color: 'red'},
+                    {question: 'こんにちは', answer: 'Bonjour', color: '#c0392b'},
                 ]
             },
-            {
-                name: 'Emptyccnjsncksdnjkcsnjkcnsdjkcnsjkcnkdsncjksncjkndsjkcnjskdnck', 
-                cards: []
-            }
         ]
 
         window.localStorage.setItem('collections', JSON.stringify(collections))

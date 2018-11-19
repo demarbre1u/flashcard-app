@@ -1,4 +1,6 @@
-<h2 *ngIf="cards.length > 0">{{ index ? index+1 : 1 }} / {{ cards.length }}</h2>
+<h1>{{ name }}</h1>
+
+<h2 *ngIf="cards.length > 0">{{ index ? index + 1 : 1 }} / {{ cards.length }}</h2>
 
 <swiper [(index)]="index" *ngIf="cards.length > 0">
 	<div *ngFor="let card of cards">
