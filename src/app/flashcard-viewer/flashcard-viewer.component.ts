@@ -4,6 +4,8 @@ import { SwiperComponent } from 'ngx-swiper-wrapper';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { routerTransition } from '../router.animations';
+import { MatDialog } from '@angular/material';
+import { DeleteCardAlertComponent } from '../delete-card-alert/delete-card-alert.component';
 
 @Component({
   selector: 'app-flashcard-viewer',
@@ -20,7 +22,7 @@ export class FlashcardViewerComponent implements OnInit {
   
   @ViewChild(SwiperComponent) componentRef?: SwiperComponent;
 
-  constructor(private route: ActivatedRoute, private storage: LocalStorageManager, private router: Router) { }
+  constructor(private route: ActivatedRoute, private storage: LocalStorageManager, private router: Router, public dialog: MatDialog) { }
 
   public ngOnInit()
   {
@@ -39,17 +41,25 @@ export class FlashcardViewerComponent implements OnInit {
   }
   
   deleteCurrentCard() {
-	  let currentIndex = this.componentRef.directiveRef.getIndex()
-	  
-	  this.storage.deleteCardFromCollection(this.currentId, currentIndex)
-	  
-	  this.router.routeReuseStrategy.shouldReuseRoute = function(){return false;};
+    let dialogRef = this.dialog.open(DeleteCardAlertComponent, {
+      width: '80vw',
+    });
 
-	  let currentUrl = this.router.url + '?';
+    dialogRef.afterClosed().subscribe(result => {
+      if(result) {
+        let currentIndex = this.componentRef.directiveRef.getIndex()
+	  
+        this.storage.deleteCardFromCollection(this.currentId, currentIndex)
 
-	  this.router.navigateByUrl(currentUrl).then(() => {
-	      this.router.navigated = false;
-	      this.router.navigate([this.router.url]);
-	  });
+        this.router.routeReuseStrategy.shouldReuseRoute = function(){return false;};
+
+        let currentUrl = this.router.url + '?';
+
+        this.router.navigateByUrl(currentUrl).then(() => {
+            this.router.navigated = false;
+            this.router.navigate([this.router.url]);
+        });
+      }
+    });
   }
 }

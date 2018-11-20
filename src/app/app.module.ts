@@ -20,6 +20,7 @@ import { AlertDialogComponent } from './alert-dialog/alert-dialog.component';
 import { MatDialogModule } from '@angular/material';
 import { MatButtonModule } from '@angular/material/button';
 import { DeleteCollectionAlertComponent } from './delete-collection-alert/delete-collection-alert.component';
+import { DeleteCardAlertComponent } from './delete-card-alert/delete-card-alert.component';
 
  
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
@@ -55,7 +56,8 @@ const appRoutes: Routes = [
     FlashcardCreatorComponent,
     CollectionListComponent,
     AlertDialogComponent,
-    DeleteCollectionAlertComponent
+    DeleteCollectionAlertComponent,
+    DeleteCardAlertComponent
   ],
   imports: [
     BrowserModule,
@@ -78,7 +80,8 @@ const appRoutes: Routes = [
   ],
   entryComponents: [
     AlertDialogComponent, 
-    DeleteCollectionAlertComponent
+    DeleteCollectionAlertComponent, 
+    DeleteCardAlertComponent,
   ],
   bootstrap: [AppComponent]
 })
