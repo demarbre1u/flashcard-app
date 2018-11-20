@@ -1,10 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { LocalStorageManager } from '../localstorage.manager';
-
 import { routerTransition } from '../router.animations';
-import { NotifierService } from 'angular-notifier';
-import { Observable } from 'rxjs';
+import { AlertDialogComponent } from '../alert-dialog/alert-dialog.component';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-flashcard-creator',
@@ -46,7 +45,7 @@ export class FlashcardCreatorComponent implements OnInit {
 
   @Input() card = {question:'', answer: '', color: '#2c3e50'}
   
-  constructor(private router: Router, private route: ActivatedRoute, private storage: LocalStorageManager, private notifierService: NotifierService) { }
+  constructor(private router: Router, private route: ActivatedRoute, private storage: LocalStorageManager, public dialog: MatDialog) { }
 
   ngOnInit() { 
     this.route.params.subscribe((params) => {this.currentId = params['id']});
@@ -66,7 +65,13 @@ export class FlashcardCreatorComponent implements OnInit {
 
   saveCard() {
     if(this.card.question === '' || this.card.answer === '') {
-      this.notifierService.notify('error', "You can't save an incomplete card!")
+      let dialogRef = this.dialog.open(AlertDialogComponent, {
+        width: '80vw',
+      });
+
+      dialogRef.afterClosed().subscribe(result => {
+        console.log(`Dialog result: ${result}`); // Pizza!
+      });
       
       return
     }

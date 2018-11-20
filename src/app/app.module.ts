@@ -14,9 +14,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomepageComponent } from './homepage/homepage.component';
 import { FlashcardCreatorComponent } from './flashcard-creator/flashcard-creator.component';
 import { LocalStorageManager } from './localstorage.manager';
-import { NotifierModule, NotifierOptions } from "angular-notifier";
 import { CollectionListComponent } from './collection-list/collection-list.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AlertDialogComponent } from './alert-dialog/alert-dialog.component';
+import { MatDialogModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+
  
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -42,46 +45,6 @@ const appRoutes: Routes = [
   },
 ];
 
-const notifierDefaultOptions: NotifierOptions = {
-  position: {
-    horizontal: {
-      position: 'left',
-      distance: 12
-    },
-    vertical: {
-      position: 'bottom',
-      distance: 12,
-      gap: 10
-    }
-  },
-  theme: 'material',
-  behaviour: {
-    autoHide: 5000,
-    onClick: 'hide',
-    showDismissButton: false,
-    stacking: 2
-  },
-  animations: {
-    enabled: true,
-    show: {
-      preset: 'slide',
-      speed: 300,
-      easing: 'ease'
-    },
-    hide: {
-      preset: 'fade',
-      speed: 300,
-      easing: 'ease',
-      offset: 50
-    },
-    shift: {
-      speed: 300,
-      easing: 'ease'
-    },
-    overlap: 150
-  }
-};
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -89,7 +52,8 @@ const notifierDefaultOptions: NotifierOptions = {
     FlashcardViewerComponent,
     HomepageComponent,
     FlashcardCreatorComponent,
-    CollectionListComponent
+    CollectionListComponent,
+    AlertDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -99,8 +63,9 @@ const notifierDefaultOptions: NotifierOptions = {
     RouterModule.forRoot(
       appRoutes
     ), 
-    NotifierModule.withConfig(notifierDefaultOptions), 
-    FontAwesomeModule
+    FontAwesomeModule, 
+    MatDialogModule,
+    MatButtonModule
   ],
   providers: [
     {
@@ -108,6 +73,9 @@ const notifierDefaultOptions: NotifierOptions = {
       useValue: DEFAULT_SWIPER_CONFIG
     }, 
     LocalStorageManager
+  ],
+  entryComponents: [
+    AlertDialogComponent
   ],
   bootstrap: [AppComponent]
 })
