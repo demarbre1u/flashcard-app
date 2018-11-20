@@ -3,6 +3,8 @@ import { routerTransition } from '../router.animations';
 import { LocalStorageManager } from '../localstorage.manager';
 import { faPlus, faEye, faTrash } from '@fortawesome/free-solid-svg-icons';
 import {  Router } from '@angular/router';
+import { MatDialog } from '@angular/material';
+import { DeleteCollectionAlertComponent } from '../delete-collection-alert/delete-collection-alert.component';
 
 @Component({
   selector: 'app-card-list',
@@ -18,7 +20,7 @@ export class CollectionListComponent implements OnInit {
   faTrash = faTrash
   collections: any
 
-  constructor(private storage: LocalStorageManager, private router: Router) { 
+  constructor(private storage: LocalStorageManager, private router: Router,  public dialog: MatDialog) { 
     this.collections = this.storage.getCollections()
   }
 
@@ -33,6 +35,23 @@ export class CollectionListComponent implements OnInit {
   }
 
   deleteCollection(id: number) {
-    
+    let dialogRef = this.dialog.open(DeleteCollectionAlertComponent, {
+      width: '80vw',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if(result) {
+        this.storage.deleteCollection(id)
+
+        this.router.routeReuseStrategy.shouldReuseRoute = function(){return false;};
+
+        let currentUrl = this.router.url + '?';
+
+        this.router.navigateByUrl(currentUrl).then(() => {
+            this.router.navigated = false;
+            this.router.navigate([this.router.url]);
+        });
+      }
+    });
   }
 }

@@ -36,11 +36,12 @@ export class LocalStorageManager {
 	    return this.getCards()[index]
     }
 
-	deleteCard(index) {
-		let newCards = this.getCards()
-		newCards.splice(index, 1)
-		
-		window.localStorage.setItem('cards', JSON.stringify(newCards) )
+	deleteCollection(index) {
+        let collections = this.getCollections()
+        
+		collections.splice(index, 1)
+        
+        window.localStorage.setItem('collections', JSON.stringify(collections) )
 	}
 
     getCards() {
