@@ -65,14 +65,10 @@ export class FlashcardCreatorComponent implements OnInit {
 
   saveCard() {
     if(this.card.question === '' || this.card.answer === '') {
-      let dialogRef = this.dialog.open(AlertDialogComponent, {
+      this.dialog.open(AlertDialogComponent, {
         width: '80vw',
       });
 
-      dialogRef.afterClosed().subscribe(result => {
-        console.log(`Dialog result: ${result}`); // Pizza!
-      });
-      
       return
     }
 
