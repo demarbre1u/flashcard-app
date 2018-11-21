@@ -17,9 +17,4 @@ export class HomepageComponent implements OnInit {
 
   ngOnInit() {
   }
-  
-  resetStorage() {
-	  // this.storage.clearCards()
-    this.storage.resetStorage()
-  }
 }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { faCog } from '@fortawesome/free-solid-svg-icons';
+import { LocalStorageManager } from './localstorage.manager';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-root',
@@ -7,8 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 	title = 'MyFlashcardApp'
+	faCog = faCog
 	
-  	public ngOnInit() { 
-		
+	constructor(private storage: LocalStorageManager, private router: Router) {}
+
+	public ngOnInit() { }
+	  
+	resetStorage() {
+		this.storage.resetStorage()
+		  
+		this.router.routeReuseStrategy.shouldReuseRoute = function(){return false;};
+
+		let currentUrl = 'list' + '?';
+
+		this.router.navigateByUrl(currentUrl).then(() => {
+			this.router.navigated = false;
+			this.router.navigate([this.router.url]);
+		});
 	}
 }

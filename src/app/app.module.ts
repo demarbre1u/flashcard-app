@@ -33,10 +33,6 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
 
 const appRoutes: Routes = [
   { 
-    path: '', 
-    component: HomepageComponent 
-  },
-  { 
     path: 'list', 
     component: CollectionListComponent 
   },
@@ -47,6 +43,10 @@ const appRoutes: Routes = [
   { 
     path: 'create/:id', 
     component: FlashcardCreatorComponent 
+  },
+  { 
+    path: '**', 
+    component: CollectionListComponent 
   },
 ];
 
