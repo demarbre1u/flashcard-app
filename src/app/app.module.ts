@@ -11,7 +11,6 @@ import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import { FlashcardComponent } from './flashcard/flashcard.component';
 import { FlashcardViewerComponent } from './flashcard-viewer/flashcard-viewer.component';
 import { Routes, RouterModule } from '@angular/router';
-import { HomepageComponent } from './homepage/homepage.component';
 import { FlashcardCreatorComponent } from './flashcard-creator/flashcard-creator.component';
 import { LocalStorageManager } from './localstorage.manager';
 import { CollectionListComponent } from './collection-list/collection-list.component';
@@ -33,7 +32,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
 
 const appRoutes: Routes = [
   { 
-    path: 'list', 
+    path: '', 
     component: CollectionListComponent 
   },
   { 
@@ -44,10 +43,12 @@ const appRoutes: Routes = [
     path: 'create/:id', 
     component: FlashcardCreatorComponent 
   },
+  /*
   { 
     path: '**', 
     component: CollectionListComponent 
   },
+  */
 ];
 
 @NgModule({
@@ -55,7 +56,6 @@ const appRoutes: Routes = [
     AppComponent,
     FlashcardComponent,
     FlashcardViewerComponent,
-    HomepageComponent,
     FlashcardCreatorComponent,
     CollectionListComponent,
     AlertDialogComponent,

@@ -74,6 +74,6 @@ export class FlashcardCreatorComponent implements OnInit {
 
     this.storage.addCardToCollection(this.currentId, this.card)
 
-    this.router.navigateByUrl('list');
+    this.router.navigateByUrl('');
   }
 }

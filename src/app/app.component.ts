@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
 		  
 		this.router.routeReuseStrategy.shouldReuseRoute = function(){return false;};
 
-		let currentUrl = 'list' + '?';
+		let currentUrl = '?';
 
 		this.router.navigateByUrl(currentUrl).then(() => {
 			this.router.navigated = false;
