@@ -32,8 +32,12 @@ export class LocalStorageManager {
         window.localStorage.setItem('collections', JSON.stringify(collections))
     }
     
-    getCard(index) {
-	    return this.getCards()[index]
+    addCollection(name) {
+        let collections = this.getCollections()
+
+        collections.push({ name: name, cards: [] })
+
+        window.localStorage.setItem('collections', JSON.stringify(collections))
     }
 
 	deleteCollection(index) {

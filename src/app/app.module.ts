@@ -19,8 +19,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AlertDialogComponent } from './alert-dialog/alert-dialog.component';
 import { MatDialogModule } from '@angular/material';
 import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatInputModule } from "@angular/material/input";
 import { DeleteCollectionAlertComponent } from './delete-collection-alert/delete-collection-alert.component';
 import { DeleteCardAlertComponent } from './delete-card-alert/delete-card-alert.component';
+import { AddCollectionAlertComponent } from './add-collection-alert/add-collection-alert.component';
 
  
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
@@ -57,7 +60,8 @@ const appRoutes: Routes = [
     CollectionListComponent,
     AlertDialogComponent,
     DeleteCollectionAlertComponent,
-    DeleteCardAlertComponent
+    DeleteCardAlertComponent,
+    AddCollectionAlertComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +73,9 @@ const appRoutes: Routes = [
     ), 
     FontAwesomeModule, 
     MatDialogModule,
-    MatButtonModule
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   providers: [
     {
@@ -82,6 +88,7 @@ const appRoutes: Routes = [
     AlertDialogComponent, 
     DeleteCollectionAlertComponent, 
     DeleteCardAlertComponent,
+    AddCollectionAlertComponent,
   ],
   bootstrap: [AppComponent]
 })

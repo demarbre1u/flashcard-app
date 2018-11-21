@@ -1,0 +1,8 @@
+#modal-btn {
+    display: flex;
+    justify-content: space-between;
+}
+
+#name-input {
+    width: 100%
+}

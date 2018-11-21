@@ -5,6 +5,7 @@ import { faPlus, faEye, faTrash } from '@fortawesome/free-solid-svg-icons';
 import {  Router } from '@angular/router';
 import { MatDialog } from '@angular/material';
 import { DeleteCollectionAlertComponent } from '../delete-collection-alert/delete-collection-alert.component';
+import { AddCollectionAlertComponent } from '../add-collection-alert/add-collection-alert.component';
 
 @Component({
   selector: 'app-card-list',
@@ -53,5 +54,25 @@ export class CollectionListComponent implements OnInit {
         });
       }
     });
+  }
+
+  addCollection() {
+    let dialogRef = this.dialog.open(AddCollectionAlertComponent, {
+      width: '80vh'
+    })
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.storage.addCollection(result)
+
+      this.router.routeReuseStrategy.shouldReuseRoute = function(){return false}
+
+      let currentUrl = this.router.url + '?'
+
+      this.router.navigateByUrl(currentUrl).then(() => {
+        this.router.navigated = false
+        this.router.navigate([this.router.url])
+      })
+    })
+    
   }
 }
