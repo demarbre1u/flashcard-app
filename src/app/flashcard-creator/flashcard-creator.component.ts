@@ -17,33 +17,33 @@ export class FlashcardCreatorComponent implements OnInit {
   colors = [
       {
         id: 1,
-        color: "#f39c12",
+        color: getComputedStyle(document.body).getPropertyValue('--fc-color-1'),
       },
       {
         id: 2,
-        color: "#c0392b",
+        color: getComputedStyle(document.body).getPropertyValue('--fc-color-2'),
       },
       {
         id: 3,
-        color: "#2980b9",
+        color: getComputedStyle(document.body).getPropertyValue('--fc-color-3'),
       },
       {
         id: 4,
-        color: "#27ae60",
+        color: getComputedStyle(document.body).getPropertyValue('--fc-color-4'),
       },
       {
         id: 5,
-        color: "#2c3e50",
+        color: getComputedStyle(document.body).getPropertyValue('--fc-color-5'),
       },
       {
         id: 6,
-        color: "#8e44ad",
+        color: getComputedStyle(document.body).getPropertyValue('--fc-color-6'),
       },
   ]
 
   currentId: string
 
-  @Input() card = {question:'', answer: '', color: '#2c3e50'}
+  @Input() card = {question:'', answer: '', color: getComputedStyle(document.body).getPropertyValue('--fc-color-1')}
   
   constructor(private router: Router, private route: ActivatedRoute, private storage: LocalStorageManager, public dialog: MatDialog) { }
 

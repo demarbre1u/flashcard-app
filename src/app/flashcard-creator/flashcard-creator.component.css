@@ -15,7 +15,7 @@
 .color-box {
     width: 8vw;
     height: 8vw;
-    border: 1px solid #bdc3c7;
+    border: 1px solid var(--border-color);
     border-radius: 8px;
 
     display: flex;
@@ -40,9 +40,9 @@
     width: 60vw;
     outline: none;
     border: none;
-	border-bottom: 2px solid #2c3e50;
+	border-bottom: 2px solid var(--main-bg-color);
 	font-size: 16px;
-	color: #2c3e50;
+	color: var(--second-text-color);
 	margin-bottom: 10px;
     margin-top: 10px;
     
@@ -51,13 +51,13 @@
 
 .input-text:focus {
     border-bottom: 2px solid #3498db;
-    color: #3498db;
+    color: var(--input-focus);
 	
     transition: border-bottom 500ms, color 500ms;
 }
 
 .input-text::placeholder {
-	color: #95a5a6; 
+	color: var(--placeholder-color); 
 }
 
 #save-btn {
@@ -71,8 +71,8 @@
     padding: 15px;
     outline: none;
     border: none;
-    background-color: #2c3e50;
-    color: #ecf0f1;
+    background-color: var(--main-button-bg);
+    color: var(--main-button-text);
     box-shadow: grey 0px 3px 5px;
 
     font-size: 20px;

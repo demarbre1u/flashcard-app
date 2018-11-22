@@ -3,7 +3,7 @@ h1 {
     margin: auto;
     margin-top: 20px;
     text-align: center;
-    color: #2c3e50;
+    color: var(--second-text-color);
     
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -15,7 +15,7 @@ h3, h2 {
     margin: auto;
     margin-top: 10px;
     text-align: center;
-    color: #2c3e50;
+    color: var(--second-text-color);
 }
 
 #btn-wrapper {
@@ -32,8 +32,8 @@ h3, h2 {
     padding: 15px;
     outline: none;
     border: none;
-    background-color: #2c3e50;
-    color: #ecf0f1;
+    background-color: var(--main-button-bg);
+    color: var(--main-button-text);
     box-shadow: grey 0px 3px 5px;
 
     font-size: 20px;

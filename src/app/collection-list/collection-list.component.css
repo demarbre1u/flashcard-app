@@ -19,8 +19,8 @@
     margin-top: 15px;
     margin-bottom: 15px;
 
-    color: #2c3e50;
-    border: 1px solid #bdc3c7;
+    color: var(--second-text-color);
+    border: 1px solid var(--border-color);
     border-radius: 5px;
     box-shadow: grey 0px 3px 5px;
 
@@ -49,12 +49,12 @@
     margin: 5px;
     margin-right: 0;
     outline: none;
-    border: 1px solid #bdc3c7;
+    border: 1px solid var(--border-color);
     box-shadow: grey 0px 3px 5px;
     border-radius: 5px;
     width: 40px;
     height: 40px;
-    color: #2c3e50;
+    color: var(--second-text-color);
     background-color: white;
 }
 
@@ -66,8 +66,8 @@
     padding: 15px;
     outline: none;
     border: none;
-    background-color: #2c3e50;
-    color: #ecf0f1;
+    background-color: var(--main-button-bg);
+    color: var(--main-button-text);
     box-shadow: grey 0px 3px 5px;
 
     font-size: 20px;
