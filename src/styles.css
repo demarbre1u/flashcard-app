@@ -4,6 +4,7 @@
 
 :root {
 	/* Background */
+	--app-bg: white;
 	--main-bg-color: #2c3e50;
 	--second-bg-color: #ecf0f1;
 	
@@ -36,4 +37,6 @@ body {
     font-family: Verdana, Arial;
     padding: 0;
     margin: 0;
+    
+    background-color: var(--app-bg);
 }

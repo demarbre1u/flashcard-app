@@ -1,0 +1,18 @@
+{
+	"appBg": "white",
+	"mainBgColor": "#e74c3c",
+	"secondBgColor": "#ecf0f1",
+	"mainTextColor": "#ecf0f1",
+	"secondTextColor": "#2c3e50",
+	"borderColor": "#bdc3c7",
+	"inputFocus": "#c0392b",
+	"placeholderColor": "#95a5a6",
+	"mainButtonBg": "#e74c3c",
+	"mainButtonText": "#ecf0f1",
+	"fcColor1": "#c0392b",
+	"fcColor2": "#2c3e50",
+	"fcColor3": "#2980b9",
+	"fcColor4": "#27ae60",
+	"fcColor5": "#f39c12",
+	"fcColor6": "#8e44ad"
+}

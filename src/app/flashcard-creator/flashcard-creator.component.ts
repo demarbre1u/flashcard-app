@@ -43,7 +43,7 @@ export class FlashcardCreatorComponent implements OnInit {
 
   currentId: string
 
-  @Input() card = {question:'', answer: '', color: getComputedStyle(document.body).getPropertyValue('--fc-color-1')}
+  @Input() card = {question:'', answer: '', color: this.colors[0].color}
   
   constructor(private router: Router, private route: ActivatedRoute, private storage: LocalStorageManager, public dialog: MatDialog) { }
 

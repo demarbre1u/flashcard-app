@@ -50,7 +50,7 @@
 }
 
 .input-text:focus {
-    border-bottom: 2px solid #3498db;
+    border-bottom: 2px solid var(--input-focus);
     color: var(--input-focus);
 	
     transition: border-bottom 500ms, color 500ms;
