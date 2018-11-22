@@ -62,6 +62,9 @@ export class CollectionListComponent implements OnInit {
     })
 
     dialogRef.afterClosed().subscribe(result => {
+	  if(!result)
+	  	return;
+	  	
       this.storage.addCollection(result)
 
       this.router.routeReuseStrategy.shouldReuseRoute = function(){return false}
