@@ -15,7 +15,13 @@ export class AppComponent implements OnInit {
 	constructor(private storage: LocalStorageManager, private router: Router) {}
 
 	public ngOnInit() {
-		this.loadTheme('red')
+		let theme = this.storage.getTheme()
+		
+		this.loadTheme(theme)
+	}
+	
+	navigateToSettings() {
+		this.router.navigateByUrl('settings')
 	}
 	
 	loadTheme(themeName: string) {
@@ -48,18 +54,5 @@ export class AppComponent implements OnInit {
 		document.documentElement.style.setProperty('--fc-color-4', theme.fcColor4)
 		document.documentElement.style.setProperty('--fc-color-5', theme.fcColor5)
 		document.documentElement.style.setProperty('--fc-color-6', theme.fcColor6)
-	}
-	  
-	resetStorage() {
-		this.storage.resetStorage()
-		  
-		this.router.routeReuseStrategy.shouldReuseRoute = function(){return false;};
-
-		let currentUrl = '?';
-
-		this.router.navigateByUrl(currentUrl).then(() => {
-			this.router.navigated = false;
-			this.router.navigate([this.router.url]);
-		});
 	}
 }

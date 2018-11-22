@@ -65,6 +65,29 @@ export class LocalStorageManager {
         else
             return JSON.parse(collections)
     }
+    
+    getTheme() {
+	    let settings = this.getSettings()
+	    
+	    return settings.theme
+    }
+    
+    setTheme(name: string) {
+	    let settings = this.getSettings()
+	    
+	    settings.theme = name
+	    
+	    window.localStorage.setItem('settings', JSON.stringify(settings))
+    }
+    
+    getSettings() {
+	    let settings = window.localStorage.getItem('settings')
+	    
+	    if(settings === null)
+	    	return {theme: 'basic'}
+	    else 
+	    	return JSON.parse(settings)
+    }
 
     resetStorage() {
         let collections =  [
@@ -87,7 +110,13 @@ export class LocalStorageManager {
                 ]
             },
         ]
-
+        
         window.localStorage.setItem('collections', JSON.stringify(collections))
+        
+        let settings = {
+	        theme: 'basic'
+        }
+        
+        window.localStorage.setItem('settings', JSON.stringify(settings))
     }
 }

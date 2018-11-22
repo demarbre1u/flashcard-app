@@ -1,0 +1,15 @@
+<div id="theme-picker">
+	Choose your theme :
+	
+	<br/>
+	
+	<mat-radio-group [(ngModel)]="theme">
+		<mat-radio-button value="basic" class="radio">Basic</mat-radio-button>
+		<mat-radio-button value="red" class="radio">Red</mat-radio-button>
+	</mat-radio-group>
+</div>
+
+<div id="buttons">
+	<button (click)="applyChanges()">Apply</button>
+	<button (click)="resetStorage()">Reset data</button>
+</div>

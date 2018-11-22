@@ -1,0 +1,30 @@
+#buttons {
+	width: 90vw;
+	margin: auto;
+	
+	display: flex;
+}
+
+button {
+    width: 45vw;
+    margin: 10px;
+    margin-top: 10px;
+    padding: 15px;
+    outline: none;
+    border: none;
+    background-color: var(--main-button-bg);
+    color: var(--main-button-text);
+    box-shadow: grey 0px 3px 5px;
+
+    font-size: 20px;
+}
+
+#theme-picker {
+	width: 80vw;
+	margin: auto;
+	margin-top: 10px;
+}
+
+.radio {
+	margin: 5px;
+}
