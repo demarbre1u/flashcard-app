@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { routerTransition } from '../router.animations';
 import { LocalStorageManager } from '../localstorage.manager';
 
@@ -11,8 +11,8 @@ import { LocalStorageManager } from '../localstorage.manager';
   host: {'[@routerTransition]': ''}
 })
 export class SettingsComponent implements OnInit {
-	
   theme: string = this.storage.getTheme()
+  @Output() eventThemeChange = new EventEmitter<string>()
 
   constructor(private storage: LocalStorageManager) {}
 
@@ -21,7 +21,7 @@ export class SettingsComponent implements OnInit {
   applyChanges() {
 	this.storage.setTheme(this.theme)
 	
-	location.reload()
+	this.eventThemeChange.emit('themeChange');
   }
   
   resetStorage() {

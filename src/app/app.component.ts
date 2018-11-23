@@ -15,16 +15,28 @@ export class AppComponent implements OnInit {
 	constructor(private storage: LocalStorageManager, private router: Router) {}
 
 	public ngOnInit() {
-		let theme = this.storage.getTheme()
-		
-		this.loadTheme(theme)
+		this.loadTheme()
 	}
 	
 	navigateToSettings() {
 		this.router.navigateByUrl('settings')
 	}
 	
-	loadTheme(themeName: string) {
+	onActivate(elementRef) {
+		let event = elementRef.eventThemeChange
+		
+		if(event === undefined)
+			return
+			
+	    elementRef.eventThemeChange.subscribe(event => {
+	        if(event === 'themeChange')
+	        	this.loadTheme()
+	    });
+	}
+	
+	loadTheme() {
+		let themeName = this.storage.getTheme()
+		
 		let theme = require(`../assets/themes/${themeName}.json`)	
 		
 		// Background
