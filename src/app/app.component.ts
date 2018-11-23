@@ -52,6 +52,7 @@ export class AppComponent implements OnInit {
 		document.documentElement.style.setProperty('--border-color', theme.borderColor)
 		
 		// Input text
+		document.documentElement.style.setProperty('--input-color', theme.inputColor)
 		document.documentElement.style.setProperty('--input-focus', theme.inputFocus)
 		document.documentElement.style.setProperty('--placeholder-color', theme.placeholderColor)
 		

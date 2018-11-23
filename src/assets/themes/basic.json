@@ -5,6 +5,7 @@
 	"mainTextColor": "#ecf0f1",
 	"secondTextColor": "#2c3e50",
 	"borderColor": "#bdc3c7",
+	"inputColor": "#2c3e50",
 	"inputFocus": "#3498db",
 	"placeholderColor": "#95a5a6",
 	"mainButtonBg": "#2c3e50",
