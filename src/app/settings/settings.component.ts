@@ -27,8 +27,7 @@ export class SettingsComponent implements OnInit {
   }
   
   resetStorage() {
-	this.storage.resetStorage()
-	
-	location.reload()
+  this.storage.resetStorage()
+	this.eventThemeChange.emit('themeChange');  
   }
 }
