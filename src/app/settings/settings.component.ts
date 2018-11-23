@@ -13,10 +13,12 @@ import { LocalStorageManager } from '../localstorage.manager';
 export class SettingsComponent implements OnInit {
   theme: string = this.storage.getTheme()
   @Output() eventThemeChange = new EventEmitter<string>()
-
+  themeList = []
   constructor(private storage: LocalStorageManager) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+	  this.themeList = require('../../assets/themes.json').themes
+  }
   
   applyChanges() {
 	this.storage.setTheme(this.theme)

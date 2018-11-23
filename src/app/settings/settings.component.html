@@ -4,8 +4,7 @@
 	<br/>
 	
 	<mat-radio-group [(ngModel)]="theme">
-		<mat-radio-button value="basic" class="radio">Basic</mat-radio-button>
-		<mat-radio-button value="red" class="radio">Red</mat-radio-button>
+		<mat-radio-button *ngFor="let theme of themeList" [value]="theme.fileName" class="radio">{{ theme.name }}</mat-radio-button>
 	</mat-radio-group>
 </div>
 

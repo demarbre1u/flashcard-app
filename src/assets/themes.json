@@ -1,0 +1,12 @@
+{
+	"themes": [
+		{
+			"name": "Basic",
+			"fileName": "basic"
+		}, 
+		{
+			"name": "Red",
+			"fileName": "red"
+		}
+	]
+}
