@@ -7,14 +7,12 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "postinstall": "ng build --aot -prod"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "~7.0.0",
     "@angular/cdk": "^7.0.4",
-    "@angular/cli": "~7.0.5",
     "@angular/common": "~7.0.0",
     "@angular/compiler": "~7.0.0",
     "@angular/core": "~7.0.0",
@@ -30,13 +28,13 @@
     "@types/node": "^10.12.10",
     "angular-ui-swiper": "^2.3.8",
     "core-js": "^2.5.4",
-    "express": "^4.17.1",
     "ngx-swiper-wrapper": "^7.0.0",
     "rxjs": "~6.3.3",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.10.0",
+    "@angular/cli": "~7.0.5",
     "@angular/compiler-cli": "~7.0.0",
     "@angular/language-service": "~7.0.0",
     "@types/jasmine": "~2.8.8",
