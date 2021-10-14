@@ -1,6 +1,6 @@
 # Flashcard App
 
-##
+## Introduction
 
 <p align="center">
   <img src="https://github.com/demarbre1u/FlashCard_App/blob/master/screenshots/Screen01.png?raw=true" width="175" title="Screen 1" alt="Screen 1">
